@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  jyputer:
+    image: jupyter/pyspark-notebook
+    volumes:
+      - jovyan:/home/jovyan/work
+    ports:
+      - 8889:8888
+      - 4040:4040
+volumes:
+  jovyan:
+    driver: local

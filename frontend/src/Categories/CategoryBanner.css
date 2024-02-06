@@ -1,0 +1,21 @@
+.category{
+    padding-top: 5rem;
+    font-size: x-large;
+}
+
+.mr-4 {
+
+    padding-right: 15px;
+}
+
+
+.custom-border {
+    border-bottom: 2px solid red; /* Adjust the width (2px) as needed */
+  }
+  
+
+
+  *{
+    
+    font-family: Arial, Helvetica, sans-serif;
+  }

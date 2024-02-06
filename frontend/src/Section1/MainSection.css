@@ -1,0 +1,8 @@
+@media (max-width: 740px) {
+    .media {
+      display: none; /* Change background color for screens wider than 640px */
+    }
+    .section{
+        justify-content: center;
+    }
+  }
