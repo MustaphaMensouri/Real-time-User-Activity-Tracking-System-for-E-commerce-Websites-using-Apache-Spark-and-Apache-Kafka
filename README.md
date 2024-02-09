@@ -11,4 +11,11 @@
 <img src="doc/image3.png" align="centre">
 <img src="doc/image4.png" align="centre">
 
-# Environment Setup
+# Deploy and usage
+
+`./docs/setup-project` - is a main entry point for configuring a new environment required to deploy a project.
+
+You can use it as follows:
+```shell
+Usage: ./docs/setup-project.sh
+```

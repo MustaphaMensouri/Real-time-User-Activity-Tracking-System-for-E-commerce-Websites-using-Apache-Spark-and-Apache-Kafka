@@ -1,6 +1,7 @@
-FROM jupyter/pyspark-notebook
-LABEL version="v1.0.0"
-LABEL app="spark"
-WORKDIR /home/jovyan/work/
-COPY test.py .
-CMD ["spark-submit", "--packages", "org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0", "test.py"]
+FROM confluentinc/cp-kafka:7.5.2
+
+
+WORKDIR /home/appuser
+
+CMD ["kafka-topics", "--bootstrap-server", "kafka:9092", "--topic", "allClicks", "--create"]
+

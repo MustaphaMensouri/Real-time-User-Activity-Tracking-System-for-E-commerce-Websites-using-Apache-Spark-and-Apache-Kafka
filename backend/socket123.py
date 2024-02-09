@@ -2,6 +2,9 @@ from flask import Flask, request
 from flask_socketio import SocketIO
 from threading import Lock
 from confluent_kafka import Consumer, KafkaException
+from flask_restful import Resource, Api
+from kafka_producer import KafkaSend
+from flask_cors import CORS
 import json
 
 """
@@ -11,9 +14,22 @@ thread = None
 thread_lock = Lock()
 
 app = Flask(__name__)
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 app.config['SECRET_KEY'] = 'donsky!'
 socketio = SocketIO(app, cors_allowed_origins='*')
 
+api = Api(app) 
+
+class Add(Resource):
+    def post(self):
+        data = request.get_json()
+        kafka = KafkaSend()
+        kafka.send("allClicks", data)
+        print(data)
+        return 200
+
+# adding the defined resources along with their corresponding urls 
+api.add_resource(Add, '/api/send_click') 
 
 
 

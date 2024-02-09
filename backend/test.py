@@ -4,7 +4,7 @@ from flask_cors import CORS
 
 from kafka_producer import KafkaSend
 
-app = Flask(__name__) 
+app = Flask(__name__)
 # creating an API object 
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 api = Api(app) 

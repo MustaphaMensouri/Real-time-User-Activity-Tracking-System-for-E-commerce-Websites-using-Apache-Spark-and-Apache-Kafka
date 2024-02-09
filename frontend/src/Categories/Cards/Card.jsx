@@ -33,7 +33,7 @@ const Card = () => {
 
   const sendClick = async (data) => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/send_click', {
+      const response = await fetch('http://127.0.0.1:5002/api/send_click', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
